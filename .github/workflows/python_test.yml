@@ -16,4 +16,5 @@ jobs:
       
       - name: run test from R
         run: Rscript test_python_R.R
-
+        env:
+          GITHUB_PAT: ${{ secrets.PAT }}
