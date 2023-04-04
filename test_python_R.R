@@ -1,13 +1,13 @@
 
-#test run python
-install.packages('reticulate')
-
+# install additional R packages
+# install.packages('reticulate')
+remotes::install_github('eco4cast/neon4cast')
 
 # install python packages
 reticulate::py_install('torch')
 
 # run python script
-reticulate::source_python('c1.py')
+reticulate::source_python('forecast_script.py') # this sh
 
 # find forecast_fil to submit to challenge
 team_name <- 'VT_aquaers'
