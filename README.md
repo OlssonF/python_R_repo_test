@@ -1,4 +1,4 @@
-# python_R_repo_test
+# Using Python and R to submit a forecast to the EF-NEON Forecast Challenge
 
 Test repository that can be used for an R/Python machine learning workflow to submit forecasts to the EFI-NEON Forecast Challenge.
 
