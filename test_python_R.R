@@ -1,15 +1,15 @@
 
-# install additional R packages
-# install.packages('reticulate')
+# Step 1: install additional R packages needed
 remotes::install_github('eco4cast/neon4cast')
 
-# install python packages
+# Step 2: install python packages
 reticulate::py_install('torch')
 
-# run python script
-reticulate::source_python('forecast_script.py') # this sh
+# Step 3: run python script - include the import etc.
+reticulate::source_python('forecast_script.py') 
+# this should write the csv
 
-# find forecast_fil to submit to challenge
+# Step 4: find forecast_file to submit to challenge
 team_name <- 'VT_aquaers'
 forecast_date <-  Sys.Date()
 
