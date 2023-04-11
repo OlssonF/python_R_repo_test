@@ -3,3 +3,10 @@ numpy
 torch
 torch.nn
 torch.optim
+matplotlib.pyplot
+torch.utils.data 
+datetime
+date
+timedelta
+scipy.stats
+google.colab
