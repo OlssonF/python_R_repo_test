@@ -24,6 +24,6 @@ team_name <- 'Aquaers'
 forecast_date <-  Sys.Date()
 theme <- 'aquatics'
 
-forecast_file <- paste0(paste(theme, forecast_date, team_name), '.csv.gz')
+forecast_file <- paste0(paste(theme, forecast_date, team_name), '.csv')
 
 neon4cast::submit(forecast_file)
