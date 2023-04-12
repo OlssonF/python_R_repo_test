@@ -1,14 +1,7 @@
 pandas
 numpy
 torch
-torch.nn
-torch.optim
-matplotlib.pyplot
-torch.utils.data 
+matplotlib 
 datetime
-date
-timedelta
-scipy.stats
-google.colab
-t
-files
+scipy
+google
