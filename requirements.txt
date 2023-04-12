@@ -1,8 +1,7 @@
-pandas==1.5.3
-pandas==0.24.0
+pandas
 numpy
 torch
 matplotlib 
 datetime
 scipy
-google-colab
+google
