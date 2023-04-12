@@ -916,6 +916,6 @@ for file in csv_files:
     merged_data = merged_data.append(data)
 
 # Write the merged data to a new CSV file
-merged_data.to_csv('lake.csv', index=False)
+merged_data.to_csv('lake.csv.gz', index=False, compression='gzip')
 
-files.download('lake.csv')
+files.download('lake.csv.gz')
