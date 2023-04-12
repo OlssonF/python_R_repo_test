@@ -7,7 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1-Z_g2m6peeJImzfHSodWlozQF_pF59ig
 """
 
-import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import torch
@@ -18,7 +17,6 @@ from datetime import date
 from datetime import timedelta
 from datetime import datetime
 from scipy.stats import t
-from google.colab import files
 
 targets = pd.read_csv('https://data.ecoforecast.org/neon4cast-targets/aquatics/aquatics-targets.csv.gz')
 targets = targets.dropna()
@@ -41,8 +39,8 @@ def convert_tensor(dataset, lb):
 class WaterQmodel(nn.Module):
     def __init__(self):
         super().__init__()
-        self.lstm = nn.LSTM(input_size=1, hidden_size=10, num_layers=1, batch_first=True)
-        self.linear = nn.Linear(10, 1)
+        self.lstm = nn.LSTM(input_size=1, hidden_size=50, num_layers=1, batch_first=True)
+        self.linear = nn.Linear(50, 1)
     def forward(self, x):
         x, _ = self.lstm(x)
         x = self.linear(x)
@@ -195,8 +193,7 @@ BARC_Chla
 
 # download as csv
 BARC = pd.concat([BARC_Temp, BARC_Oxy, BARC_Chla], axis=0, ignore_index=True)
-BARC.to_csv('BARC.csv', encoding = 'utf-8-sig') 
-files.download('BARC.csv')
+BARC.to_csv('BARC.csv', encoding = 'utf-8-sig')
 
 """CRAM - Temperature, Oxygen, Chla
 
@@ -294,8 +291,7 @@ CRAM_Chla
 
 # download as csv
 CRAM = pd.concat([CRAM_Temp, CRAM_Oxy, CRAM_Chla], axis=0, ignore_index=True)
-CRAM.to_csv('CRAM.csv', encoding = 'utf-8-sig') 
-files.download('CRAM.csv')
+CRAM.to_csv('CRAM.csv', encoding = 'utf-8-sig')
 
 """LIRO - Temperature,Oxygen,Chla"""
 
@@ -391,8 +387,7 @@ LIRO_Chla
 
 # download as csv
 LIRO = pd.concat([LIRO_Temp, LIRO_Oxy, LIRO_Chla], axis=0, ignore_index=True)
-LIRO.to_csv('LIRO.csv', encoding = 'utf-8-sig') 
-files.download('LIRO.csv')
+LIRO.to_csv('LIRO.csv', encoding = 'utf-8-sig')
 
 """PRLA - Temperature,Oxygen,Chla"""
 
@@ -488,8 +483,7 @@ PRLA_Chla
 
 # download as csv
 PRLA = pd.concat([PRLA_Temp, PRLA_Oxy, PRLA_Chla], axis=0, ignore_index=True)
-PRLA.to_csv('PRLA.csv', encoding = 'utf-8-sig') 
-files.download('PRLA.csv')
+PRLA.to_csv('PRLA.csv', encoding = 'utf-8-sig')
 
 """PRPO - Temperature,Oxygen,Chla"""
 
@@ -585,8 +579,7 @@ PRPO_Chla
 
 # download as csv
 PRPO = pd.concat([PRPO_Temp, PRPO_Oxy, PRPO_Chla], axis=0, ignore_index=True)
-PRPO.to_csv('PRPO.csv', encoding = 'utf-8-sig') 
-files.download('PRPO.csv')
+PRPO.to_csv('PRPO.csv', encoding = 'utf-8-sig')
 
 """SUGG - Temperature,Oxygen,Chla"""
 
@@ -682,8 +675,7 @@ SUGG_Chla
 
 # download as csv
 SUGG = pd.concat([SUGG_Temp, SUGG_Oxy, SUGG_Chla], axis=0, ignore_index=True)
-SUGG.to_csv('SUGG.csv', encoding = 'utf-8-sig') 
-files.download('SUGG.csv')
+SUGG.to_csv('SUGG.csv', encoding = 'utf-8-sig')
 
 """TOOK - Temperature,Oxygen,Chla"""
 
@@ -902,8 +894,7 @@ TOOK_Chla
 
 # download as csv
 TOOK = pd.concat([TOOK_Temp, TOOK_Oxy, TOOK_Chla], axis=0, ignore_index=True)
-TOOK.to_csv('TOOK.csv', encoding = 'utf-8-sig') 
-files.download('TOOK.csv')
+TOOK.to_csv('TOOK.csv', encoding = 'utf-8-sig')
 
 csv_files = ['BARC.csv', 'CRAM.csv', 'LIRO.csv', 'PRLA.csv', 'SUGG.csv', 'PRPO.csv', 'TOOK.csv']
 
@@ -913,9 +904,7 @@ merged_data = pd.DataFrame()
 # Loop through the CSV files and append them to the merged_data DataFrame
 for file in csv_files:
     data = pd.read_csv(file)
-    merged_data = merged_data.append(data)
+    merged_data = pd.concat(data)
 
 # Write the merged data to a new CSV file
 merged_data.to_csv('lake.csv.gz', index=False, compression='gzip')
-
-files.download('lake.csv.gz')
