@@ -4,4 +4,4 @@ torch
 matplotlib 
 datetime
 scipy
-google
+google-collab
