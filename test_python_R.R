@@ -8,10 +8,10 @@ remotes::install_github('eco4cast/neon4cast')
 # Step 2: install python packages using reticulate
 to_install <- scan('requirements.txt', character(), quote = "")
 reticulate::py_install(packages = to_install)
+message('package install complete')
 
 
-
-
+message('starting python script')
 # Step 3: run python script - include the import etc.
 reticulate::source_python('forecast_script.py') 
 # this should write the csv.gz file at the end
