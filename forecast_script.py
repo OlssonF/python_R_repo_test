@@ -879,7 +879,7 @@ num_trainings = 2
 results_df = pd.DataFrame()
 for i in range(num_trainings):
 
-    training(model,number_epochs=50)
+    training(model, number_epochs=50)
 
     predictions = predict(TOOK_Chla , Data_TOOK_Chla ,types = 'chla' , site_id = 'TOOK')
     predictions.insert(3, 'parameters', i+1)
@@ -902,9 +902,8 @@ csv_files = ['BARC.csv', 'CRAM.csv', 'LIRO.csv', 'PRLA.csv', 'SUGG.csv', 'PRPO.c
 merged_data = pd.DataFrame()
 
 # Loop through the CSV files and append them to the merged_data DataFrame
-for file in csv_files:
-    data = pd.read_csv(file)
-    merged_data = pd.concat(data)
+
+merged_data = pd.concat([BARC, CRAM, LIRO, PRLA, SUGG, PRPO, TOOK], axis = 0)
 
 # Write the merged data to a new CSV file
 merged_data.to_csv('lake.csv.gz', index=False, compression='gzip')
