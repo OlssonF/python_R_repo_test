@@ -26,4 +26,6 @@ theme <- 'aquatics'
 
 forecast_file <- paste0(paste(theme, forecast_date, team_name), '.csv.gz')
 
+file.copy('lake.csv.gz', forecast_file)
+
 neon4cast::submit(forecast_file)
