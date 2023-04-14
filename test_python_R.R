@@ -24,8 +24,13 @@ team_name <- 'Aquaers'
 forecast_date <-  Sys.Date()
 theme <- 'aquatics'
 
-forecast_file <- paste0(paste(theme, forecast_date, team_name), '.csv.gz')
 
-file.copy('lake.csv.gz', forecast_file)
+forecast <- read_csv('lake.csv.gz') |>
+  mutate(reference_datetime = min(datetime) - days(1))
+
+
+forecast_file <- paste0(paste(theme, forecast_date, team_name, sep = '-'), '.csv.gz')
+
+
 
 neon4cast::submit(forecast_file)
