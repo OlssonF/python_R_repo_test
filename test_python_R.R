@@ -1,3 +1,6 @@
+library(tidyverse)
+library(lubridate)
+
 
 # Step 1: install additional R packages needed
 remotes::install_github('eco4cast/neon4cast')
@@ -25,13 +28,13 @@ forecast_date <-  Sys.Date()
 theme <- 'aquatics'
 
 # set to standard
-forecast <- read_csv('lake.csv') |>
-  mutate(reference_datetime = min(datetime) - days(1)) |> 
-  rename(parameter = parameters)
+forecast <- readr::read_csv('lake.csv') |>
+  dplyr::mutate(reference_datetime = min(datetime) - lubridate::days(1)) |> 
+  dplyr::rename(parameter = parameters)
 
 
 forecast_file <- paste0(paste(theme, forecast_date, team_name, sep = '-'), '.csv.gz')
 
-write_csv(forecast, forecast_file)
+readr::write_csv(forecast, forecast_file)
 
 neon4cast::submit(forecast_file)
