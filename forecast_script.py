@@ -24,7 +24,7 @@ targetsTemp = targets[targets.variable == "temperature"]
 targetsOxygen = targets[targets.variable == "oxygen"]
 targetsChla = targets[targets.variable == "chla"]
 
-# defineing all the function we will use
+# defining all the function we will use
 
 #this function will turn our data in to a tensor for our model to able to use
 def convert_tensor(dataset, lb):
@@ -731,13 +731,13 @@ today =date.today()
 model = WaterQmodel()
 
 # Define the number of times to train the model
-num_trainings = 2
+num_trainings = 3
 
 # Initialize an DataFrame
 results_df = pd.DataFrame()
 for i in range(num_trainings):
 
-    training(model,number_epochs=50)
+    training(model,number_epochs=300)
 
     predictions = predict(TOOK_Temperature , Data_TOOK_Temp ,types = 'temperature' , site_id = 'TOOK')
     predictions.insert(3, 'parameters', i+1)
@@ -802,13 +802,13 @@ today =date.today()
 model = WaterQmodel()
 
 # Define the number of times to train the model
-num_trainings = 2
+num_trainings = 3
 
 # Initialize an DataFrame
 results_df = pd.DataFrame()
 for i in range(num_trainings):
 
-    training(model,number_epochs=50)
+    training(model,number_epochs=300)
 
     predictions = predict(TOOK_Oxy , Data_TOOK_Oxy ,types = 'oxygen' , site_id = 'TOOK')
     predictions.insert(3, 'parameters', i+1)
@@ -873,13 +873,13 @@ today =date.today()
 model = WaterQmodel()
 
 # Define the number of times to train the model
-num_trainings = 2
+num_trainings = 3
 
 # Initialize an DataFrame
 results_df = pd.DataFrame()
 for i in range(num_trainings):
 
-    training(model, number_epochs=50)
+    training(model, number_epochs=300)
 
     predictions = predict(TOOK_Chla , Data_TOOK_Chla ,types = 'chla' , site_id = 'TOOK')
     predictions.insert(3, 'parameters', i+1)
