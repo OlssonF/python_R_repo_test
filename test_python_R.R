@@ -23,7 +23,7 @@ reticulate::source_python('forecast_script.py')
 
 
 # Step 4: find forecast_file to submit to challenge
-team_name <- 'Aquaers'
+team_name <- 'VT_Aquaers'
 forecast_date <-  Sys.Date()
 theme <- 'aquatics'
 
