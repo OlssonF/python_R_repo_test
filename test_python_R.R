@@ -28,7 +28,7 @@ forecast_date <-  Sys.Date()
 theme <- 'aquatics'
 
 # set to standard
-forecast <- readr::read_csv('lake.csv') |>
+forecast <- readr::read_csv('lake.csv.gz') |>
   dplyr::mutate(reference_datetime = min(datetime) - lubridate::days(1)) |> 
   dplyr::rename(parameter = parameters)
 
