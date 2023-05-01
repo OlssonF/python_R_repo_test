@@ -1,3 +1,6 @@
+import sys
+today = sys.argv[1:]
+
 # -*- coding: utf-8 -*-
 """forecast_script
 
@@ -168,7 +171,7 @@ data_targets_BARCO_Chla = data_targets_BARCO_Chla.reset_index(drop=True)
 targets_BARCO_Chla = data_targets_BARCO_Chla[["observation"]].values.astype('float32')
 
 X_train, y_train = convert_tensor(targets_BARCO_Chla, lb=14)
-today =date.today()
+#today =date.today()
 model = WaterQmodel()
 
 # Define the number of times to train the model
@@ -206,7 +209,7 @@ data_targets_CRAM_Temp = data_targets_CRAM_Temp.reset_index(drop=True)
 targets_CRAM_Temp = data_targets_CRAM_Temp[["observation"]].values.astype('float32')
 
 X_train, y_train = convert_tensor(targets_CRAM_Temp, lb=14)
-today =date.today()
+#today =date.today()
 model = WaterQmodel()
 
 # Define the number of times to train the model
@@ -236,7 +239,7 @@ data_targets_CRAM_Oxy = data_targets_CRAM_Oxy.reset_index(drop=True)
 targets_CRAM_Oxy = data_targets_CRAM_Oxy[["observation"]].values.astype('float32')
 
 X_train, y_train = convert_tensor(targets_CRAM_Oxy, lb=14)
-today =date.today()
+#today =date.today()
 model = WaterQmodel()
 
 # Define the number of times to train the model
@@ -266,7 +269,7 @@ data_targets_CRAM_Chla = data_targets_CRAM_Chla.reset_index(drop=True)
 targets_CRAM_Chla = data_targets_CRAM_Chla[["observation"]].values.astype('float32')
 
 X_train, y_train = convert_tensor(targets_CRAM_Chla, lb=14)
-today =date.today()
+#today =date.today()
 model = WaterQmodel()
 
 # Define the number of times to train the model
@@ -302,7 +305,7 @@ data_targets_LIRO_Temp = data_targets_LIRO_Temp.reset_index(drop=True)
 targets_LIRO_Temp = data_targets_LIRO_Temp[["observation"]].values.astype('float32')
 
 X_train, y_train = convert_tensor(targets_LIRO_Temp, lb=14)
-today =date.today()
+#today =date.today()
 model = WaterQmodel()
 
 # Define the number of times to train the model
@@ -332,7 +335,7 @@ data_targets_LIRO_Oxy = data_targets_LIRO_Oxy.reset_index(drop=True)
 targets_LIRO_Oxy = data_targets_LIRO_Oxy[["observation"]].values.astype('float32')
 
 X_train, y_train = convert_tensor(targets_LIRO_Oxy, lb=14)
-today =date.today()
+#today =date.today()
 model = WaterQmodel()
 
 # Define the number of times to train the model
@@ -362,7 +365,7 @@ data_targets_LIRO_Chla = data_targets_LIRO_Chla.reset_index(drop=True)
 targets_LIRO_Chla = data_targets_LIRO_Chla[["observation"]].values.astype('float32')
 
 X_train, y_train = convert_tensor(targets_LIRO_Chla, lb=14)
-today =date.today()
+#today =date.today()
 model = WaterQmodel()
 
 # Define the number of times to train the model
@@ -398,7 +401,7 @@ data_targets_PRLA_Temp = data_targets_PRLA_Temp.reset_index(drop=True)
 targets_PRLA_Temp = data_targets_PRLA_Temp[["observation"]].values.astype('float32')
 
 X_train, y_train = convert_tensor(targets_PRLA_Temp, lb=14)
-today =date.today()
+#today =date.today()
 model = WaterQmodel()
 
 # Define the number of times to train the model
@@ -428,7 +431,7 @@ data_targets_PRLA_Oxy = data_targets_PRLA_Oxy.reset_index(drop=True)
 targets_PRLA_Oxy = data_targets_PRLA_Oxy[["observation"]].values.astype('float32')
 
 X_train, y_train = convert_tensor(targets_PRLA_Oxy, lb=14)
-today =date.today()
+#today =date.today()
 model = WaterQmodel()
 
 # Define the number of times to train the model
@@ -458,7 +461,7 @@ data_targets_PRLA_Chla = data_targets_PRLA_Chla.reset_index(drop=True)
 targets_PRLA_Chla = data_targets_PRLA_Chla[["observation"]].values.astype('float32')
 
 X_train, y_train = convert_tensor(targets_PRLA_Chla, lb=14)
-today =date.today()
+#today =date.today()
 model = WaterQmodel()
 
 # Define the number of times to train the model
@@ -494,7 +497,7 @@ data_targets_PRPO_Temp = data_targets_PRPO_Temp.reset_index(drop=True)
 targets_PRPO_Temp = data_targets_PRPO_Temp[["observation"]].values.astype('float32')
 
 X_train, y_train = convert_tensor(targets_PRPO_Temp, lb=14)
-today =date.today()
+#today =date.today()
 model = WaterQmodel()
 
 # Define the number of times to train the model
@@ -524,7 +527,7 @@ data_targets_PRPO_Oxy = data_targets_PRPO_Oxy.reset_index(drop=True)
 targets_PRPO_Oxy = data_targets_PRPO_Oxy[["observation"]].values.astype('float32')
 
 X_train, y_train = convert_tensor(targets_PRPO_Oxy, lb=14)
-today =date.today()
+#today =date.today()
 model = WaterQmodel()
 
 # Define the number of times to train the model
@@ -554,7 +557,7 @@ data_targets_PRPO_Chla = data_targets_PRPO_Chla.reset_index(drop=True)
 targets_PRPO_Chla = data_targets_PRPO_Chla[["observation"]].values.astype('float32')
 
 X_train, y_train = convert_tensor(targets_PRPO_Chla, lb=14)
-today =date.today()
+#today =date.today()
 model = WaterQmodel()
 
 # Define the number of times to train the model
@@ -590,7 +593,7 @@ data_targets_SUGG_Temp = data_targets_SUGG_Temp.reset_index(drop=True)
 targets_SUGG_Temp = data_targets_SUGG_Temp[["observation"]].values.astype('float32')
 
 X_train, y_train = convert_tensor(targets_SUGG_Temp, lb=14)
-today =date.today()
+#today =date.today()
 model = WaterQmodel()
 
 # Define the number of times to train the model
@@ -620,7 +623,7 @@ data_targets_SUGG_Oxy = data_targets_SUGG_Oxy.reset_index(drop=True)
 targets_SUGG_Oxy = data_targets_SUGG_Oxy[["observation"]].values.astype('float32')
 
 X_train, y_train = convert_tensor(targets_SUGG_Oxy, lb=14)
-today =date.today()
+#today =date.today()
 model = WaterQmodel()
 
 # Define the number of times to train the model
@@ -650,7 +653,7 @@ data_targets_SUGG_Chla = data_targets_SUGG_Chla.reset_index(drop=True)
 targets_SUGG_Chla = data_targets_SUGG_Chla[["observation"]].values.astype('float32')
 
 X_train, y_train = convert_tensor(targets_SUGG_Chla, lb=14)
-today =date.today()
+#today =date.today()
 model = WaterQmodel()
 
 # Define the number of times to train the model
@@ -687,7 +690,7 @@ targets_TOOK_Temp = data_targets_TOOK_Temp[["observation"]].values.astype('float
 
 # train the model to predict enough datas for future prediction
 X_train, y_train = convert_tensor(targets_TOOK_Temp, lb=14)
-today =date.today()
+#today =date.today()
 model = WaterQmodel()
 training(model,number_epochs=300)
 
@@ -727,7 +730,7 @@ Data_TOOK_Temp = Data_TOOK_Temp.reset_index(drop=True)
 TOOK_Temperature = Data_TOOK_Temp[["observation"]].values.astype('float32')
 
 X_train, y_train = convert_tensor(TOOK_Temperature, lb=14)
-today =date.today()
+#today =date.today()
 model = WaterQmodel()
 
 # Define the number of times to train the model
@@ -758,7 +761,7 @@ targets_TOOK_Oxy = data_targets_TOOK_Oxy[["observation"]].values.astype('float32
 
 # train the model to predict enough datas for future prediction
 X_train, y_train = convert_tensor(targets_TOOK_Oxy, lb=14)
-today =date.today()
+#today =date.today()
 model = WaterQmodel()
 training(model,number_epochs=300)
 
@@ -798,7 +801,7 @@ Data_TOOK_Oxy = Data_TOOK_Oxy.reset_index(drop=True)
 TOOK_Oxy = Data_TOOK_Oxy[["observation"]].values.astype('float32')
 
 X_train, y_train = convert_tensor(TOOK_Oxy, lb=14)
-today =date.today()
+#today =date.today()
 model = WaterQmodel()
 
 # Define the number of times to train the model
@@ -829,7 +832,7 @@ targets_TOOK_Chla = data_targets_TOOK_Chla[["observation"]].values.astype('float
 
 # train the model to predict enough datas for future prediction
 X_train, y_train = convert_tensor(targets_TOOK_Chla, lb=14)
-today =date.today()
+#today =date.today()
 model = WaterQmodel()
 training(model,number_epochs=300)
 
@@ -869,7 +872,7 @@ Data_TOOK_Chla = Data_TOOK_Chla.reset_index(drop=True)
 TOOK_Chla = Data_TOOK_Chla[["observation"]].values.astype('float32')
 
 X_train, y_train = convert_tensor(TOOK_Chla, lb=14)
-today =date.today()
+#today =date.today()
 model = WaterQmodel()
 
 # Define the number of times to train the model
